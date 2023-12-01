@@ -1,5 +1,5 @@
 import { ToastContainer, toast } from 'react-toastify';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -14,7 +14,7 @@ function App() {
   //ref
   const passwordRef = useRef(null)
 
-  const passwordGenrator = useCallback(() => {
+  const passwordGenrator = useMemo(() => {
     let pass = ""
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
     if (numberAllow) str += "0123456789"
